@@ -35,12 +35,12 @@ public class FrontController extends HttpServlet {
         if(action.equals("/board.do")){
             Board b1 = new FakeDAO().boardData();
             req.setAttribute("b1", b1);
-            RequestDispatcher dispatcher = req.getRequestDispatcher("WEB-INF/views/board.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/board.jsp");
             dispatcher.forward(req, resp);
         }else if(action.equals("/user.do")){
             User u1 = new FakeDAO().userData();
             req.setAttribute("u1", u1);
-            RequestDispatcher dispatcher = req.getRequestDispatcher("WEB-INF/views/user.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/user.jsp");
             dispatcher.forward(req, resp);
         }else{
             resp.setContentType("text/html; charset=utf-8");
